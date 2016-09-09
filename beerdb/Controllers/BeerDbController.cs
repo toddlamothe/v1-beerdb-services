@@ -10,11 +10,14 @@ namespace beerdb.Controllers
 {
     public class BeerDbController : ApiController
     {
-        Brewery brewery = new Brewery { totalResults = 1 };
+        Brewery[] _breweries = new Brewery[] {
+            new Brewery { totalResults = 1 }
+        };
 
-        public Brewery getBrewery()
+        [AcceptVerbs("GET")]
+        public IEnumerable<Brewery> breweries()
         {
-            return brewery;
+            return _breweries;
         }
     }
 }

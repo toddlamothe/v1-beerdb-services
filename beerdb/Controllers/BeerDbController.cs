@@ -5,9 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using beerdb.Models;
+using System.Web.Http.Cors;
 
 namespace beerdb.Controllers
 {
+    [EnableCors(origins: "http://localhost:8000", headers: "*", methods: "*")]
     public class BeerDbController : ApiController
     {
 
@@ -19,8 +21,8 @@ namespace beerdb.Controllers
             status = "success",
             data = new BreweryData {
                 id = "pj4HJk",
-                name = "Test Brewery",
-                nameShortDisplay = "Test Brewery",
+                name = "The Alchemist",
+                nameShortDisplay = "The Alchemist",
                 description = "The Alchemist is a 7 barrel brew pub specializing in hand-crafted  beer and casual pub fare.  All of our ales flow directly from our  basement brewery, which was designed and installed by our brewer and  co-proprietor John Kimmich.   We use only the finest imported malts and  domestic hops available to bring you the tastiest and finest selection  of beers in Vermont!",
                 website = "http://www.alchemistbeer.com/",
                 established = "1976",

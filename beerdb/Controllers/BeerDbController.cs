@@ -16,37 +16,6 @@ namespace beerdb.Controllers
         private const String breweryDbBaseUrl = "http://api.brewerydb.com/v2/";
         private const String breweryDbApiKey = "8ee12a2f196eb183914740dbbb5ccfff";
 
-        // Mock payload used for testing
-        BrewerySearchResults _breweries = new BrewerySearchResults {
-            currentPage = 1,
-            numberOfPages = 1,
-            totalResults = 1,
-            status = "success",
-            data = new List<BreweryData> {
-                new BreweryData {
-                    id = "pj4HJk",
-                    name = "The Alchemist",
-                    nameShortDisplay = "The Alchemist",
-                    description = "The Alchemist is a 7 barrel brew pub specializing in hand-crafted  beer and casual pub fare.  All of our ales flow directly from our  basement brewery, which was designed and installed by our brewer and  co-proprietor John Kimmich.   We use only the finest imported malts and  domestic hops available to bring you the tastiest and finest selection  of beers in Vermont!",
-                    website = "http://www.alchemistbeer.com/",
-                    established = "1976",
-                    isOrganic = "N",
-                    status = "verified",
-                    statusDisplay = "Verified",
-                    createDate = "2012-01-03 02:42:09",
-                    updateDate = "2015-12-22 15:00:03",
-                    images = new BreweryImages
-                    {
-                        icon = "https://s3.amazonaws.com/brewerydbapi/brewery/pj4HJk/upload_rtxgwR-icon.png",
-                        medium = "https://s3.amazonaws.com/brewerydbapi/brewery/pj4HJk/upload_rtxgwR-medium.png",
-                        large = "https://s3.amazonaws.com/brewerydbapi/brewery/pj4HJk/upload_rtxgwR-large.png",
-                        squareMedium = "https://s3.amazonaws.com/brewerydbapi/brewery/pj4HJk/upload_rtxgwR-squareMedium.png",
-                        squareLarge = "https://s3.amazonaws.com/brewerydbapi/brewery/pj4HJk/upload_rtxgwR-squareLarge.png"
-                    }
-                }
-            }
-        };
-
         [AcceptVerbs("GET")]
         public BrewerySearchResults breweries()
         {

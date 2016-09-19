@@ -17,10 +17,16 @@ namespace beerdb.Controllers
         private const String breweryDbApiKey = "8ee12a2f196eb183914740dbbb5ccfff";
 
         [AcceptVerbs("GET")]
-        public BrewerySearchResults breweries()
+        public BrewerySearchResults breweries(String name = null, bool organic = false)
         {
             try
             {
+                Console.WriteLine("");
+                if (name != null)
+                {
+                    Console.WriteLine("  brewery name = ", name);
+                }
+                Console.WriteLine("");
                 String urlParameters = "name=The%20Alchemist";
                 // "breweries?key=" + breweryDbApiKey + "&" + urlParameters
                 // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist

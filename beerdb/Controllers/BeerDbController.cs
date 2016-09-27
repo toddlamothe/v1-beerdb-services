@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace beerdb.Controllers
 {
-    [EnableCors(origins: "http://localhost:8000", headers: "*", methods: "*")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class BeerDbController : ApiController
     {
         private const String breweryDbBaseUrl = "http://api.brewerydb.com/v2/";
@@ -21,14 +21,14 @@ namespace beerdb.Controllers
         {
             try
             {
-                Console.WriteLine("");
+                String urlParameters = "";
+                // Brewery name
                 if (name != null)
-                {
-                    Console.WriteLine("  brewery name = ", name);
-                }
-                Console.WriteLine("");
-                String urlParameters = "name=The%20Alchemist";
-                // "breweries?key=" + breweryDbApiKey + "&" + urlParameters
+                    urlParameters += "name=" + name;
+                else
+                    urlParameters += "name=The%20Alchemist";
+
+
                 // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist
                 HttpClient httpClient = new HttpClient();
                 httpClient.BaseAddress = new Uri(breweryDbBaseUrl);

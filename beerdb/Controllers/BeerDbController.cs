@@ -25,9 +25,6 @@ namespace beerdb.Controllers
                 // Brewery name
                 if (name != null)
                     urlParameters += "name=" + name;
-                else
-                    urlParameters += "name=The%20Alchemist";
-
 
                 // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist
                 HttpClient httpClient = new HttpClient();

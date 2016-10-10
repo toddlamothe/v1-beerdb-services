@@ -52,11 +52,11 @@ namespace beerdb.Controllers
             }
         }
 
-        [AcceptVerbs("GET")]
-        public BeerSearchResults beers(String name = null)
-        {
-            return null;
-        }
+        //[AcceptVerbs("GET")]
+        //public BeerSearchResults beers(String name = null)
+        //{
+        //    return null;
+        //}
 
     }
 }

@@ -17,10 +17,16 @@ namespace beerdb
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+                name: "GetBreweries",
+                routeTemplate: "api/BeerDb/breweries",
+                defaults: new { Controller = "BeerDb", Action = "breweries" }
+                );
+
+            config.Routes.MapHttpRoute(
+                name: "GetBeers",
+                routeTemplate: "api/BeerDb/beers",
+                defaults: new { Controller = "BeerDb", Action = "beers" }
+                );
         }
     }
 }

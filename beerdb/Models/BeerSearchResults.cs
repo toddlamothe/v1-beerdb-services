@@ -10,11 +10,7 @@ namespace beerdb.Models
         public int currentPage { get; set; }
         public int numberOfPages { get; set; }
         public int totalResults { get; set; }
-        public String name { get; set; }
-        public String description { get; set; }
-        public float abv { get; set; }
-        public float ibu { get; set; }
-        public List<BeerLabels> labels { get; set; }
+        public List<BeerData> data { get; set; }
     }
 
     //{

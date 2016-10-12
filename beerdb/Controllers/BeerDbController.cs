@@ -55,7 +55,37 @@ namespace beerdb.Controllers
         [AcceptVerbs("GET")]
         public BeerSearchResults beers(String name = null)
         {
-            return null;
+            try
+            {
+                String urlParameters = "";
+                // Brewery name
+                if (name != null)
+                    urlParameters += "name=" + name;
+
+                // http://api.brewerydb.com/v2/beers?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist
+                HttpClient httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri(breweryDbBaseUrl);
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = httpClient.GetAsync("beers?key=" + breweryDbApiKey + "&" + urlParameters).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    // Parse the response body. Blocking!
+                    var dataObject = response.Content.ReadAsAsync<BeerSearchResults>().Result;
+                    Console.WriteLine("Data Object: ", dataObject);
+                    return dataObject;
+                }
+                else
+                {
+                    throw new Exception("Error retrieving results");
+                };
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.InnerException);
+                throw e;
+            }
         }
 
     }

@@ -15,5 +15,6 @@ namespace beerdb.Models
         public String ibu { get; set; }
         public string status { get; set; }
         public BeerLabels labels{ get; set; }
+        public List<BreweryData> breweries { get; set; }
     }
 }

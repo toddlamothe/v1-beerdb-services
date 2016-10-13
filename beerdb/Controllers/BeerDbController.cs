@@ -67,7 +67,7 @@ namespace beerdb.Controllers
                 httpClient.BaseAddress = new Uri(breweryDbBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = httpClient.GetAsync("beers?key=" + breweryDbApiKey + "&" + urlParameters).Result;
+                HttpResponseMessage response = httpClient.GetAsync("beers?key=" + breweryDbApiKey + "&withBreweries=Y&" + urlParameters).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     // Parse the response body. Blocking!

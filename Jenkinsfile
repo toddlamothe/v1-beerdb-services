@@ -1,5 +1,14 @@
 node {
-    echo 'Hello sucka!'
-    echo 'BUILD_ID:'
-    echo env.BUILD_ID
+    stage('Containerize and Build') {
+        echo 'Starting Containerize and Build...'
+        /* .. snip .. */
+    }
+    stage('Test') {
+        echo 'Starting Test...'
+        /* .. snip .. */
+    }
+    stage('Deploy') {
+        echo 'Starting Deploy...'
+        /* .. snip .. */
+    }
 }

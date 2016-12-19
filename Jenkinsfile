@@ -10,7 +10,7 @@ node {
     }
     stage('Deploy') {
         echo 'Starting Deploy...'
-        /* .. snip .. */
+        bat 'docker run -d -p 8888:80 toddlamothe/beerdb-services'
     }
 }
 

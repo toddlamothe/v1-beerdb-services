@@ -11,7 +11,7 @@ node {
     }
     stage('Deploy') {
         echo 'Starting Deploy...'
-        bat 'docker stop -d toddlamothe/beerdb-services'
+        REM bat 'docker stop toddlamothe/beerdb-services'
         bat 'docker run -d -p 8888:80 toddlamothe/beerdb-services'
     }
 }

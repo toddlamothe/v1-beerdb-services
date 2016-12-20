@@ -11,6 +11,7 @@ node {
     }
     stage('Deploy') {
         echo 'Starting Deploy...'
+        docker rm $(docker stop $(docker ps -a -q --filter ancestor=toddlamothe/beerdb-services --format="{{.ID}}"))
         bat 'docker run -d -p 8888:80 toddlamothe/beerdb-services'
     }
 }

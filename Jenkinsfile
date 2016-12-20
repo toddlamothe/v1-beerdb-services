@@ -1,5 +1,6 @@
 node {
     stage('Containerize and Build') {
+        echo '[Build #14]'
         echo 'Starting Containerize and Build...'
         bat 'docker build -t toddlamothe/beerdb-services C:/code/beerdb_services/'
         /* .. snip .. */

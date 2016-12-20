@@ -13,7 +13,15 @@ node {
     }
     stage('Deploy') {
         echo 'Starting Deploy...'
-        // bat 'docker rm $(docker stop $(docker ps -a -q --filter ancestor=toddlamothe/beerdb-services --format="{{.ID}}"))'
+        
+        // Attempt to stop any instances of the running container before building.
+        try {
+            bat 'docker rm $(docker stop $(docker ps -a -q --filter ancestor=toddlamothe/beerdb-services --format="{{.ID}}"))'
+        }
+        catch(err) {
+            echo err
+        }
+
         bat 'docker run -d -p 8888:80 toddlamothe/beerdb-services'
     }
 }

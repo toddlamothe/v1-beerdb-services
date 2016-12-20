@@ -13,7 +13,7 @@ node {
     }
     stage('Deploy') {
         echo 'Starting Deploy...'
-        
+
         // Attempt to stop any instances of the running container before building.
         try {
             bat 'docker rm $(docker stop $(docker ps -a -q --filter ancestor=toddlamothe/beerdb-services --format="{{.ID}}"))'

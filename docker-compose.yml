@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: toddlamothe/beerdb-services
+        ports:
+            - "8888:80"
+    web:
+        build:
+            context: c:\code\beerdb-web\
+            dockerfile: Dockerfile.dist
+        image: toddlamothe/beerdb-web
+        ports:
+            - "8002:80"

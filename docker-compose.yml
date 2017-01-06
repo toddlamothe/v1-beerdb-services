@@ -15,3 +15,7 @@ services:
         image: toddlamothe/beerdb-web
         ports:
             - "8002:80"
+networks:
+  default:
+    external:
+      name: nat

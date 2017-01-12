@@ -2,7 +2,7 @@
 
 node {
     stage('Pull latest orchestration scripts') {
-        def exists = fileExists '.\beerdb-orchestration\docker-compose.yml'
+        def exists = fileExists '.\\beerdb-orchestration\\docker-compose.yml'
 
         if (exists) {
             echo 'Pulling latest orchestration files'

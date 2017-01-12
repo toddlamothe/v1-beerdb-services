@@ -10,8 +10,10 @@ node {
                 bat 'git pull'
             }
         } else {
-            echo 'Cloning orchestration repo';
-            bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
+            dir('..\\') {
+                echo 'Cloning orchestration repo';
+                bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
+            }
         }      
     }
     stage('Stop running service containers') {

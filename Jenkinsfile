@@ -2,7 +2,18 @@
 
 node {
     stage('Pull latest orchestration scripts') {
-        bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
+
+        dir('..\\') {
+            bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
+        }
+    }
+    stage('Stop running service containers') {
+        dir('..\\beerdb-orchestration\\') {
+            bat 'docker-compose stop api'
+        }
+    }
+    stage('Pull latest source code') {
+        bat 'git pull'
     }
     stage('Containerize and Build') {
         bat 'docker build -t toddlamothe/beerdb-services C:/code/beerdb-services/'

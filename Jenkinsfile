@@ -1,6 +1,9 @@
 #!groovy
 
 node {
+    stage('Pull latest orchestration scripts') {
+        bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
+    }
     stage('Containerize and Build') {
         bat 'docker build -t toddlamothe/beerdb-services C:/code/beerdb-services/'
         /* .. snip .. */

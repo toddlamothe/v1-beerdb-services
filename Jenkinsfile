@@ -17,9 +17,16 @@ node {
         }
     }
     stage('Stop running service containers') {
+      // Attempt to stop any instances of the running container before building.
+      try {
         dir('..\\beerdb-orchestration\\') {
             bat 'docker-compose stop api'
         }
+      }
+      catch(err) {
+          echo err
+      }
+
     }
     stage('Pull latest source code') {
         bat 'git pull'

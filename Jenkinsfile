@@ -24,6 +24,7 @@ node {
         }
       }
       catch(err) {
+          echo 'Error occurred attempting to stop api services:'
           echo err
       }
 

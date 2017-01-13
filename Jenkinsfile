@@ -20,7 +20,7 @@ node {
       // Attempt to stop any instances of the running container before building.
       try {
         dir('..\\beerdb-orchestration\\') {
-            bat 'docker-compose stop api'
+            /*bat 'docker-compose stop api'*/
         }
       }
       catch(err) {

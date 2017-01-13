@@ -2,7 +2,7 @@
 
 node {
     stage('Pull latest orchestration scripts') {
-        def exists = fileExists '.\\beerdb-orchestration\\docker-compose.yml'
+        def exists = fileExists '..\\beerdb-orchestration\\docker-compose.yml'
 
         if (exists) {
             echo 'Pulling latest orchestration files'
@@ -14,7 +14,7 @@ node {
                 echo 'Cloning orchestration repo';
                 bat 'git clone https://github.com/toddlamothe/beerdb-orchestration.git'
             }
-        }      
+        }
     }
     stage('Stop running service containers') {
         dir('..\\beerdb-orchestration\\') {

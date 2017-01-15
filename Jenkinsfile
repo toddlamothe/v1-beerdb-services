@@ -30,7 +30,11 @@ node {
 
     }
     stage('Pull latest source code') {
-        bat 'git pull'
+      echo 'Current working directory:'
+      def workspace = pwd()
+      echo workspace
+      echo 'Pulling latest source...'
+      bat 'git pull'
     }
     stage('Containerize and Build') {
         bat 'docker build -t toddlamothe/beerdb-services C:/code/beerdb-services/'

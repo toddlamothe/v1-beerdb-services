@@ -2,7 +2,7 @@
 
 node {
     stage('Containerize and Build') {
-        bat 'docker build -t toddlamothe/beerdb-services C:/code/beerdb-services/'
+        bat 'docker build -t toddlamothe/beerdb-services .'
         /* .. snip .. */
     }
     stage('Test') {

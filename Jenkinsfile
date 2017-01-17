@@ -9,4 +9,7 @@ node {
   stage('Test') {
       /* .. snip .. */
   }
+  stage('Deploy to Docker Hub') {
+    bat 'docker push toddlamothe/beerdb-services'  
+  }
 }

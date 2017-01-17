@@ -1,11 +1,12 @@
 #!groovy
 
 node {
-    stage('Containerize and Build') {
-        bat 'docker build -t toddlamothe/beerdb-services .'
-        /* .. snip .. */
+  stage('Containerize and Build') {
+    dir("${WORKSPACE}@script") {
+      bat 'docker build -t toddlamothe/beerdb-services .'
     }
-    stage('Test') {
-        /* .. snip .. */
-    }
+  }
+  stage('Test') {
+      /* .. snip .. */
+  }
 }

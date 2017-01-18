@@ -10,7 +10,6 @@ node {
       /* .. snip .. */
   }
   stage('Deploy to Docker Hub') {
-    bat 'docker login'
     bat 'docker push toddlamothe/beerdb-services'
   }
 }

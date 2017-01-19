@@ -31,14 +31,11 @@ namespace beerdb.Controllers
                 httpClient.BaseAddress = new Uri(breweryDbBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                Console.WriteLine("URL = " + "breweries?key=" + breweryDbApiKey + urlParameters);
-
                 HttpResponseMessage response = httpClient.GetAsync("breweries?key=" + breweryDbApiKey + urlParameters).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     // Parse the response body. Blocking!
                     var dataObject = response.Content.ReadAsAsync<BrewerySearchResults>().Result;
-                    Console.WriteLine("Data Object: ", dataObject);
                     return dataObject;
                 }
                 else

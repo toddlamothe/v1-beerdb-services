@@ -8,11 +8,13 @@ namespace beerdb.Models
 {
     public class Location
     {
-        public float lat { get; set; }
-        public float lon { get; set; }
+        public float latitude { get; set; }
+        public float longitude { get; set; }
         public String locality { get; set; }
         public String regiod { get; set; }
         public String postalCode { get; set; }
- 
+        public String isPrimary { get; set; }
+
+
     }
 }

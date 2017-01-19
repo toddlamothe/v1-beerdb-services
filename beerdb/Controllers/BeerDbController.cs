@@ -42,6 +42,7 @@ namespace beerdb.Controllers
                 {
                     throw new Exception("Error retrieving results");
                 };
+
             }
             catch (Exception e)
             {

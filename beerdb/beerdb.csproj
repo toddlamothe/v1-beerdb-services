@@ -131,9 +131,11 @@
     <Compile Include="Models\BeerData.cs" />
     <Compile Include="Models\BeerLabels.cs" />
     <Compile Include="Models\BeerSearchResults.cs" />
+    <Compile Include="Models\BreweryLocation.cs" />
     <Compile Include="Models\BrewerySearchResults.cs" />
     <Compile Include="Models\BreweryData.cs" />
     <Compile Include="Models\BreweryImages.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

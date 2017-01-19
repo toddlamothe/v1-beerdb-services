@@ -12,5 +12,5 @@ namespace beerdb.Models
         public int totalResults { get; set; }
         public List<BreweryData> data {get; set; }
         public String status { get; set; }
-}
+    }
 }

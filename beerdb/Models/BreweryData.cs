@@ -19,6 +19,7 @@ namespace beerdb.Models
         public String statusDisplay { get; set; }
         public String createDate { get; set; }
         public String updateDate { get; set; }
+        public List<BreweryLocation> locations { get; set; }
 
-}
+    }
 }

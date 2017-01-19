@@ -21,17 +21,19 @@ namespace beerdb.Controllers
         {
             try
             {
-                String urlParameters = "";
+                String urlParameters = "&withLocations=Y";
                 // Brewery name
                 if (name != null)
-                    urlParameters += "name=" + name;
+                    urlParameters += "&name=" + name;
 
-                // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist
+                // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist%20&withLocations=Y&hasImages=Y
                 HttpClient httpClient = new HttpClient();
                 httpClient.BaseAddress = new Uri(breweryDbBaseUrl);
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = httpClient.GetAsync("breweries?key=" + breweryDbApiKey + "&" + urlParameters).Result;
+                Console.WriteLine("URL = " + "breweries?key=" + breweryDbApiKey + urlParameters);
+
+                HttpResponseMessage response = httpClient.GetAsync("breweries?key=" + breweryDbApiKey + urlParameters).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     // Parse the response body. Blocking!

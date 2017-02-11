@@ -27,6 +27,11 @@ namespace beerdb
                 routeTemplate: "api/BeerDb/beers",
                 defaults: new { Controller = "BeerDb", Action = "beers" }
                 );
+            config.Routes.MapHttpRoute(
+                name: "GetBreweriesByLocation",
+                routeTemplate: "api/BeerDb/breweries/near",
+                defaults: new { Controller = "BeerDb", Action = "breweriesByLocation" }
+                );
         }
     }
 }

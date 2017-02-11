@@ -94,6 +94,15 @@ namespace beerdb.Controllers
                         breweryData.name = breweryLocationData.brewery.name;
                         breweryData.description = breweryLocationData.brewery.description;
                         breweryData.nameShortDisplay = breweryLocationData.brewery.nameShortDisplay;
+                        breweryData.website = breweryLocationData.brewery.website;
+                        breweryData.established = breweryLocationData.brewery.established;
+                        breweryData.isOrganic = breweryLocationData.brewery.isOrganic;
+                        breweryData.images = breweryLocationData.brewery.images;
+                        breweryData.status = breweryLocationData.brewery.status;
+                        breweryData.statusDisplay = breweryLocationData.brewery.statusDisplay;
+                        breweryData.createDate = breweryLocationData.brewery.createDate;
+                        breweryData.updateDate = breweryLocationData.brewery.updateDate;
+                        breweryData.locations = breweryLocationData.brewery.locations;
                         brewerySearchResults.data.Add(breweryData);
                     }
                     return brewerySearchResults;

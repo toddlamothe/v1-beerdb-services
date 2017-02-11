@@ -13,8 +13,8 @@ namespace beerdb.Models
         public String locality { get; set; }
         public String region { get; set; }
         public String postalCode { get; set; }
-        public String latitude { get; set; }
-        public String longitude { get; set; }
+        public float latitude { get; set; }
+        public float longitude { get; set; }
         public String isPrimary { get; set; }
         public String inPlanning { get; set; }
         public String isClosed { get; set; }

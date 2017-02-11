@@ -102,7 +102,11 @@ namespace beerdb.Controllers
                         breweryData.statusDisplay = breweryLocationData.brewery.statusDisplay;
                         breweryData.createDate = breweryLocationData.brewery.createDate;
                         breweryData.updateDate = breweryLocationData.brewery.updateDate;
-                        breweryData.locations = breweryLocationData.brewery.locations;
+                        var breweryLocation = new BreweryLocation();
+                        breweryLocation.latitude = breweryLocationData.latitude;
+                        breweryLocation.longitude = breweryLocationData.longitude;
+                        breweryData.locations = new List<BreweryLocation>();
+                        breweryData.locations.Add(breweryLocation);
                         brewerySearchResults.data.Add(breweryData);
                     }
                     return brewerySearchResults;

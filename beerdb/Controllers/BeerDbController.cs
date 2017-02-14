@@ -105,6 +105,14 @@ namespace beerdb.Controllers
                         var breweryLocation = new BreweryLocation();
                         breweryLocation.latitude = breweryLocationData.latitude;
                         breweryLocation.longitude = breweryLocationData.longitude;
+                        breweryLocation.isPrimary = breweryLocationData.isPrimary;
+                        breweryLocation.name = breweryLocationData.name;
+                        breweryLocation.streetAddress = breweryLocationData.streetAddress;
+                        breweryLocation.locationTypeDisplay = breweryLocationData.locationTypeDisplay;
+                        breweryLocation.locationType = breweryLocationData.locationType;
+                        breweryLocation.locality = breweryLocationData.locality;
+                        breweryLocation.region = breweryLocationData.region;
+                        breweryLocation.postalCode = breweryLocationData.postalCode;
                         breweryData.locations = new List<BreweryLocation>();
                         breweryData.locations.Add(breweryLocation);
                         brewerySearchResults.data.Add(breweryData);

@@ -17,7 +17,7 @@ namespace beerdb.Controllers
         private const String breweryDbApiKey = "8ee12a2f196eb183914740dbbb5ccfff";
 
         [AcceptVerbs("GET")]
-        public BrewerySearchResults breweries(String name = null, bool organic = false, String country = null, String state = null, string city = null)
+        public BrewerySearchResults breweries(String name = null, bool organic = false, string city = null, String state = null, String zip = null)
         {
             try
             {
@@ -25,12 +25,12 @@ namespace beerdb.Controllers
                 // Brewery name
                 if (name != null)
                     urlParameters += "&name=" + name;
-                if (country != null)
-                    urlParameters += "&country=" + country;
-                if (state != null)
-                    urlParameters += "&region=" + state;
                 if (city != null)
                     urlParameters += "&locality=" + city;
+                if (state != null)
+                    urlParameters += "&region=" + state;
+                if (zip != null)
+                    urlParameters += "&postalCode=" + zip;
 
                 // http://api.brewerydb.com/v2/breweries?key=8ee12a2f196eb183914740dbbb5ccfff&name=The%20Alchemist%20&withLocations=Y&hasImages=Y
                 HttpClient httpClient = new HttpClient();
